@@ -7,7 +7,7 @@
   Your browser does not support the audio element.
 </audio>
 
-<p id='message'></p>
+<p id='msg'></p>
 <div id='buttons'>
 <button onclick="playAudio()" type="button">Play Audio</button>
 <button onclick="pauseAudio()" type="button">Pause Audio</button> 
@@ -27,8 +27,7 @@ function sendMessage() {
 };
 
 socket.onmessage = function(event) {
-  document.getElementById('message').innerHTML = event.data;
-  alert(event.data);
+  playAudio();
 };
 
 socket.onclose = function(event) {
@@ -43,11 +42,6 @@ socket.onclose = function(event) {
 
 socket.onerror = function(error) {
   alert(`[error] ${error.message}`);
-};
-var vid = document.getElementById("myAudio");
-vid.onloadeddata = function() {
-  var buttons = document.getElementById('buttons');
-
 };
 
 var x = document.getElementById("myAudio"); 

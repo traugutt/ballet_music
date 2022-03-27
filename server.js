@@ -29,8 +29,6 @@ function onConnect(ws) {
   });
 }
 
-
-
 // if (!module.parent) {
 //   http.createServer(accept).listen(8080);
 // } else {
