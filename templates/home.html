@@ -20,7 +20,6 @@ let socket = new WebSocket("ws://159.223.234.185:7071");
 socket.onopen = function(e) {
   alert("[open] Connection established");
   alert("Sending to server");
-  socket.send("My name is John");
 };
 
 function sendMessage() {
@@ -29,6 +28,7 @@ function sendMessage() {
 
 socket.onmessage = function(event) {
   document.getElementById('message').innerHTML = event.data;
+  alert(event.data)
 };
 
 socket.onclose = function(event) {
