@@ -17,7 +17,7 @@ function accept(req, res) {
   }
 
   wss.handleUpgrade(req, req.socket, Buffer.alloc(0), onConnect);
-}
+};
 
 function onConnect(ws) {
   ws.on('message', function (message) {
@@ -33,3 +33,4 @@ if (!module.parent) {
 } else {
   exports.accept = accept;
 }
+

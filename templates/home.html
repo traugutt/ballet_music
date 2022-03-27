@@ -11,11 +11,11 @@
 <div id='buttons'>
 <button onclick="playAudio()" type="button">Play Audio</button>
 <button onclick="pauseAudio()" type="button">Pause Audio</button> 
-<button onclick="sendMessage()" type="button">Pause Audio</button> 
+<button onclick="sendMessage()" type="button">send</button> 
 </div>
 
 <script>
-let socket = new WebSocket("wss://javascript.info/article/websocket/demo/hello");
+let socket = new WebSocket("http://159.223.234.185:8080/");
 
 // socket.onopen = function(e) {
 //   alert("[open] Connection established");
