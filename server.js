@@ -1,7 +1,8 @@
 const http = require('http');
 const ws = require('ws');
 
-const wss = new ws.Server({noServer: true});
+//const wss = new ws.Server({noServer: true});
+const ws = new WebSocket.Server({ port: 7071 });
 
 function accept(req, res) {
   // all incoming requests must be websockets
@@ -28,9 +29,11 @@ function onConnect(ws) {
   });
 }
 
-if (!module.parent) {
-  http.createServer(accept).listen(8080);
-} else {
-  exports.accept = accept;
-}
+
+
+// if (!module.parent) {
+//   http.createServer(accept).listen(8080);
+// } else {
+//   exports.accept = accept;
+// }
 

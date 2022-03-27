@@ -15,13 +15,13 @@
 </div>
 
 <script>
-let socket = new WebSocket("wss://159.223.234.185:8080/");
+let socket = new WebSocket("wss://159.223.234.185:8080");
 
-// socket.onopen = function(e) {
-//   alert("[open] Connection established");
-//   alert("Sending to server");
-//   socket.send("My name is John");
-// };
+socket.onopen = function(e) {
+  alert("[open] Connection established");
+  alert("Sending to server");
+  socket.send("My name is John");
+};
 
 function sendMessage() {
   socket.send("pokso naeui ko");
