@@ -23,7 +23,7 @@ function accept(req, res) {
 function onConnect(ws) {
   ws.on('message', function (message) {
     message = message.toString();
-    ws.send(message);
+    ws.send(message + ' from here');
 
     // setTimeout(() => ws.close(1000, "Bye!"), 5000);
   });

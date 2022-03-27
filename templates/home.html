@@ -28,7 +28,7 @@ function sendMessage() {
 
 socket.onmessage = function(event) {
   document.getElementById('message').innerHTML = event.data;
-  alert(event.data)
+  alert(event.data);
 };
 
 socket.onclose = function(event) {
