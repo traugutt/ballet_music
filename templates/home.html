@@ -15,6 +15,19 @@
 </div>
 
 <script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+
+} 
+
+function pauseAudio() { 
+  console.log(x.currentTime);
+  x.pause(); 
+
+}
+
 let socket = new WebSocket("ws://159.223.234.185:7071");
 
 socket.onopen = function(e) {
@@ -44,18 +57,7 @@ socket.onerror = function(error) {
   alert(`[error] ${error.message}`);
 };
 
-var x = document.getElementById("myAudio"); 
 
-function playAudio() { 
-  x.play(); 
-
-} 
-
-function pauseAudio() { 
-	console.log(x.currentTime);
-  x.pause(); 
-
-} 
 
 </script>
 
