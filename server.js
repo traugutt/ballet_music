@@ -1,5 +1,5 @@
 const http = require('http');
-const ws = require('ws');
+const WebSocket = require('ws');
 
 //const wss = new ws.Server({noServer: true});
 const ws = new WebSocket.Server({ port: 7071 });
