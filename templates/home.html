@@ -7,12 +7,44 @@
   Your browser does not support the audio element.
 </audio>
 
-<p>Click the buttons to play or pause the audio.</p>
-
+<p>
+<div id='buttons'>
 <button onclick="playAudio()" type="button">Play Audio</button>
 <button onclick="pauseAudio()" type="button">Pause Audio</button> 
+</div>
 
 <script>
+let socket = new WebSocket("wss://javascript.info/article/websocket/demo/hello");
+
+socket.onopen = function(e) {
+  alert("[open] Connection established");
+  alert("Sending to server");
+  socket.send("My name is John");
+};
+
+socket.onmessage = function(event) {
+  alert(`[message] Data received from server: ${event.data}`);
+};
+
+socket.onclose = function(event) {
+  if (event.wasClean) {
+    alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+  } else {
+    // e.g. server process killed or network down
+    // event.code is usually 1006 in this case
+    alert('[close] Connection died');
+  }
+};
+
+socket.onerror = function(error) {
+  alert(`[error] ${error.message}`);
+};
+var vid = document.getElementById("myAudio");
+vid.onloadeddata = function() {
+  var buttons = document.getElementById('buttons');
+
+};
+
 var x = document.getElementById("myAudio"); 
 
 function playAudio() { 
